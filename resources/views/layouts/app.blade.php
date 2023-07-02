@@ -21,6 +21,7 @@
 
 <body style="background: #fca61d">
     <div id="app">
+
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background: #5d6fb7;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -81,7 +82,20 @@
             </div>
         </nav>
 
+
         <main class="py-4">
+            <div class="container">
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+            </div>
             @yield('content')
         </main>
     </div>
