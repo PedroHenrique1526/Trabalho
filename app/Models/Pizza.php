@@ -22,9 +22,11 @@ class Pizza extends Model
 
     public $messages = [
         'sabor.required' => 'O campo sabor é obrigatório',
-        'sabor.min' => 'O campo sabor deve ter no mínio 3 caracteres',
+        'sabor.min' => 'O campo sabor deve ter no mínimo 3 caracteres',
+        'sabor.max' => 'O campo sabor deve ter no mínimo 10 caracteres',
         'preco.required' => 'O campo preço é obrigatório',
         'descricao.required' => 'O campo descrição é obrigatório',
         'descricao.min' => 'O campo descrição deve ter no mínimo 10 caracteres',
+        'descricao.max' => 'O campo sabor deve ter no mínimo 10 caracteres'
     ];
 }
