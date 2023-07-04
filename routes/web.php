@@ -24,8 +24,9 @@ Route::get('/apaga/{id}', [PizzaController::class, 'apaga'])->name('apaga');
 Route::get('/cadastro', [PizzaController::class, 'cadastro'])->name('cadastro');
 Route::post('/cadastro', [PizzaController::class, 'store'])->name('store');
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [PizzaController::class, 'index'])->name('home');
+Route::get('/home', [PizzaController::class, 'index']);
+
 
 Route::get('/edita/{id}', [PizzaController::class, 'edita'])->name('edita');
 Route::post('/atualiza/{id}', [PizzaController::class, 'atualiza'])->name('atualiza');

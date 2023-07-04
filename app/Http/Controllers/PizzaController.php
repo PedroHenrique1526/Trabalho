@@ -12,7 +12,7 @@ class PizzaController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show']);
     }
 
     public function edita($id)
@@ -21,7 +21,10 @@ class PizzaController extends Controller
         return view('edita', compact('pizza'));
     }
 
-
+    public function index()
+    {
+        return view('home');
+    }
 
     public function show()
     {
@@ -52,7 +55,7 @@ class PizzaController extends Controller
         $dados = $request->except('_token', 'submit');
         $pizza = new Pizza();
         $this->validate($request, $pizza->rules, $pizza->messages);
-        if ($request->hasFile('imagem')) { 
+        if ($request->hasFile('imagem')) {
             $novoNome = $request->file('imagem')->store('imagens', 'public');
             $dados['imagem'] = $novoNome;
         }
